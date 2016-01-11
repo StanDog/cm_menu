@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>CM Menu</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="generator" content="COIN.DOCU v0.1" />
+		<link rel="stylesheet" type="text/css" media="all" href="interface/style.css" />
+		<script type="text/javascript" src="interface/script.js"></script>
+
+		<!-- Global font (overrides interface/style.css) -->
+		
+
+		<!-- Custom CSS -->
+		<style type="text/css">
+.page_specsTable td:first-child
+{
+  font-weight: bold;
+}
+
+.page_specsTable td
+{
+  padding-right: 12px;
+  font-size: 0.9em;
+  line-height: 120%;
+}
+
+.page_specsTable caption
+{
+  text-align: left;
+}
+
+.coindocu_page ul
+{
+  margin: 0;
+  padding-left: 1em;
+}
+		</style>
+
+		<!-- Custom JS -->
+		<script type="text/javascript">
+
+		</script>
+	</head>
+	<body>
+
+		<!-- Bookmark popup -->
+		<div class="bookmarkWrapper" onclick="cancelEventPropagation(event);">
+			<div onclick="bookmarkPage('browser');">Add to browser</div>
+			<div onclick="bookmarkPage('documentation');">Add to documentation</div>
+		</div>
+
+		<!-- Related pages popup -->
+		<div class="relatedPagesWrapper" onclick="cancelEventPropagation(event);"></div>
+
+		<div class="mainWrapper">
+
+			<div class="header">
+				<img class="headerLogo show0" src="files/" onclick="if ('' != '') window.open('');" />
+				<div class="headerTitle">CM Menu</div>
+				<input class="headerSearch open" id="headerSearch" placeholder="Search" onfocus="toggleSearch(true);" onblur="toggleSearch(false);" onkeyup="doSearch(this.value);" />
+				<div class="headerSearchButtonWrapper" id="headerSearchButtonWrapper" onmouseup="headerSearchButtonMouseUp();" title="Search">
+					<div class="headerSearchButton" id="headerSearchButton"></div>
+				</div>
+			</div>
+
+			<!-- This button is always visible, stays on fixed position and overlaps everything else -->
+			<div class="menuButton" title="Menu" onclick="toggleMenu();"><span>≡</span></div>
+
+			<div class="iFrameLiquidWrapper">
+				<div class="mainContent" id="mainContent">[CONTENT]</div>
+			</div>
+
+			<div class="menuWrapper">
+
+				<div class="menuButtonWrapper" onclick="toggleTypesMenu();">
+					<div class="menuTypesCaption">Topics</div>
+					<div class="menuTypesToggleArrow">
+						<div class="menuTypesToggleArrowRotator"></div>
+					</div>
+				</div>
+
+				<div class="menuTypeWrapper">
+					<div onclick="selectListType(this, 'menuListTopicsWrapper');" id="menuTypeTopics">Topics</div>
+					<div onclick="selectListType(this, 'menuListIndexWrapper');" id="menuTypeIndex">Index</div>
+					<div onclick="selectListType(this, 'menuListSearchWrapper');" id="menuTypeSearchResults">Search results <span id="searchResultsAmount">(0)</span></div>
+					<div onclick="selectListType(this, 'menuListRelatedPagesWrapper');" id="menuTypeRelatedPages">Related pages</div>
+					<div onclick="selectListType(this, 'menuListBookmarksWrapper');" id="menuTypeBookmarks">Bookmarks</div>
+				</div>
+
+				<div class="menuListWrapper">
+
+					<div class="menuListTopicsWrapper" visibilitystate="1">
+						TOPICS_LIST
+						<div onclick="loadPage('testpage1')">testpage1</div>
+						<div onclick="loadPage('testpage2')">testpage2</div>
+						<div onclick="loadPage('testpage3')">testpage3</div>
+					</div>
+
+					<div class="menuListIndexWrapper" visibilitystate="0">
+						<input type="text" placeholder="Quicksearch" class="menuListIndexSearchInput" onkeyup="indexQuicksearch(this.value);"/>
+
+						<div class="menuListIndexSearchWrapper">
+							INDEX_LIST
+						</div>
+					</div>
+
+					<div class="menuListSearchWrapper" visibilitystate="0">
+						<div class="menuListSearchResultsWrapper"></div>
+						<div class="noSearchResultsLeftMenu">No s</div>
+					</div>
+
+					<div class="menuListRelatedPagesWrapper" visibilitystate="0">
+						RELATEDPAGES_LIST
+					</div>
+
+					<div class="menuListBookmarksWrapper" visibilitystate="0">
+						BOOKMARKS_LIST
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="footer">
+				
+
+				<!-- Attribution for foreign images -->
+				<div class="footerForeignAttributions">
+					Some images by <a href="http://icons8.com/c/flat-color-icons" target="_blank">Icons8</a> under <a href="http://icons8.com/good-boy-license/" target="_blank">Good Boy License</a>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+</html>

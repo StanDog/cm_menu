@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CM Menu Example</title>
+		<script type="text/javascript" src="../cm_menu/cm_menu.js"></script>
+
+		<style type="text/css">
+		a {
+			display: block;
+		}
+		</style>
+
+		<script type="text/javascript">
+			function $(e)
+			{
+				return document.getElementById(e);
+			}
+
+			window.addEventListener('load', function(evt)
+			{
+				// Create submenu
+				cm_menu.createMenu({
+					id: 'mySubmenu',
+					width: 'content',
+					iconBar: true,
+					entries: [
+						{
+							id: 'subItem1',
+							caption: 'Disable this, enable subItem2',
+							icon: 'ok-96.png',
+							click: 'this.classList.add("disabled"); $("subItem2").classList.remove("disabled");',
+						},
+						{
+							id: 'subItem2',
+							caption: 'Disable this, enable subItem1',
+							icon: 'ok-96.png',
+							disabled: true,
+							click: 'this.classList.add("disabled"); $("subItem1").classList.remove("disabled");',
+						},
+					]
+				});
+
+				cm_menu.createMenu({
+					id: 'myMenu',
+					iconBar: true,
+					entries: [
+						{
+							caption: 'Go to',
+							default: true,
+							icon: 'globe-96.png',
+							click: 'window.location.href = cm_menu.contextElement.href;',
+						},
+						{
+							caption: 'Colorize link from the item that was right-clicked',
+							tooltip: 'This is a hint for very long entries',
+							icon: 'rating-96.png',
+							click: 'cm_menu.contextElement.style.color = "red";',
+						},
+						{
+							id: 'autoEntry',
+							caption: 'Alert right-clicked element text',
+							click: 'alert(cm_menu.contextElement.textContent);',
+						},
+						{
+							caption: 'Click with direct function',
+							click: myFunc,
+						},
+						{
+							delimiter: true,
+						},
+						{
+							caption: 'Submenu',
+							icon: 'parallel_tasks-96.png',
+							submenu: 'mySubmenu',
+						},
+					]
+				});
+
+				// Assign menu
+				cm_menu.assignMenu('link1', 'myMenu');
+				cm_menu.assignMenu('link2', 'myMenu');
+
+			}, false);
+
+			// Function to modify menu before / after it opens
+			function modifyMenu(e)
+			{
+				$('autoEntry').textContent = 'Alert: ' + cm_menu.contextElement.textContent;
+
+				// Find the assigned menu
+				//alert($('link2').getAttribute('data-cm-menu'));
+			}
+
+			function myFunc(event)
+			{
+				cm_menu._closeMenus();
+				alert('myFunc()!');
+
+				// Access clicked menu entry
+				event.currentTarget.style.color = 'red';
+			}
+		</script>
+
+	</head>
+	<body>
+		<a href="https://example.org/" id="link1">https://example.org/ (alpha)</a>
+		<a href="https://example.com/" id="link2" data-cm-onbeforeopen="modifyMenu();">https://example.com/ (bravo)</a>
+		<a href="https://example.net/">https://example.net/ (charlie)</a>
+	</body>
+</html>

@@ -1,0 +1,1 @@
+This folder contains files for the interface (framework), like CSS, JavaScript or pictures.

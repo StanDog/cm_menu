@@ -1,0 +1,1248 @@
+html, body
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100%;
+	letter-spacing: 0em;
+	background: #FFFFFF;
+}
+
+a
+{
+	color: #8BA4B5;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #5c7688;
+}
+
+.mainWrapper
+{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.header
+{
+	height: 50px;
+	background: #8BA4B5;
+	position: relative;
+	padding: 6px 15px 6px 6px;
+}
+
+.headerLogo
+{
+	display: inline-block;
+	height: 90%;
+	margin-right: 20px;
+	vertical-align: middle;
+}
+
+.headerLogo.show1
+{
+	display: inline-block;
+}
+
+.headerLogo.show0
+{
+	display: none;
+}
+
+.headerTitle
+{
+	font-size: 1.8em;
+	display: inline-block;
+	vertical-align: middle;
+	color: white;
+	margin-top: 7px;
+}
+
+@media all and (max-width: 850px)
+{
+	.headerTitle
+	{
+		font-size: 1.4em;
+	}
+}
+
+@media all and (max-width: 650px)
+{
+	.headerTitle
+	{
+		font-size: 1.2em;
+	}
+}
+
+@media all and (max-width: 500px)
+{
+	.headerTitle
+	{
+		display: none;
+	}
+}
+
+.headerSearch
+{
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding: 8px 32px 8px 8px;
+	color: #5D5553;
+	background-color: #FFFFFF;
+	vertical-align: middle;
+	border: 0;
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	width: 220px;
+	cursor: text;
+	z-index: 1;
+	-webkit-transition: color 200ms, width 200ms, background 200ms;
+	-moz-transition: color 200ms, width 200ms, background 200ms;
+	-ms-transition: color 200ms, width 200ms, background 200ms;
+	-o-transition: color 200ms, width 200ms, background 200ms;
+	transition: color 200ms, width 200ms, background 200ms;
+}
+
+@media all and (max-width: 850px)
+{
+	.headerSearch
+	{
+		width: 180px;
+	}
+}
+
+@media all and (max-width: 650px)
+{
+	.headerSearch
+	{
+		width: 150px;
+	}
+}
+
+@media all and (max-width: 500px)
+{
+	.headerSearch
+	{
+		width: 120px;
+	}
+}
+
+.headerSearch.closed
+{
+	color: #8BA4B5;
+	width: 18px;
+	background-color: #8BA4B5;
+}
+
+.headerSearchButtonWrapper
+{
+	position: absolute;
+	z-index: 2;
+	right: 20px;
+	top: 20px;
+	cursor: pointer;
+	display: block;
+	height: 23px;
+	width: 23px;
+	background: #ffffff;
+	-webkit-transition: background 200ms;
+	-moz-transition: background 200ms;
+	-ms-transition: background 200ms;
+	-o-transition: background 200ms;
+	transition: background 200ms;
+}
+
+.headerSearchButton
+{
+	position: relative;
+	font-size: 2em;  /* This controls the size. */
+	display: inline-block;
+	width: 0.4em;
+	height: 0.4em;
+	border: 0.1em solid #B3B3B3;
+	border-radius: 0.35em;
+	-webkit-transition: border 200ms;
+	-moz-transition: border 200ms;
+	-ms-transition: border 200ms;
+	-o-transition: border 200ms;
+	transition: border 200ms;
+}
+
+.headerSearchButton::before
+{
+	content: "";
+	display: inline-block;
+	position: absolute;
+	right: -0.25em;
+	bottom: -0.1em;
+	border-width: 0;
+	background: #B3B3B3;
+	width: 0.35em;
+	height: 0.08em;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-webkit-transition: background 200ms;
+	-moz-transition: background 200ms;
+	-ms-transition: background 200ms;
+	-o-transition: background 200ms;
+	transition: background 200ms;
+}
+
+.headerSearchButtonClosed
+{
+	position: relative;
+	font-size: 2em;  /* This controls the size. */
+	display: inline-block;
+	width: 0.4em;
+	height: 0.4em;
+	border: 0.1em solid #E6E6E6;
+	border-radius: 0.35em;
+	-webkit-transition: border 200ms;
+	-moz-transition: border 200ms;
+	-ms-transition: border 200ms;
+	-o-transition: border 200ms;
+	transition: border 200ms;
+}
+
+.headerSearchButtonClosed::before
+{
+	content: "";
+	display: inline-block;
+	position: absolute;
+	right: -0.25em;
+	bottom: -0.1em;
+	border-width: 0;
+	background: #E6E6E6;
+	width: 0.35em;
+	height: 0.08em;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-webkit-transition: background 200ms;
+	-moz-transition: background 200ms;
+	-ms-transition: background 200ms;
+	-o-transition: background 200ms;
+	transition: background 200ms;
+}
+
+.menuButton
+{
+	position: absolute;
+	left: 0;
+	top: 62px;
+	z-index: 2;
+	width: 40px;
+	height: 40px;
+	display: block;
+	cursor: pointer;
+	color: gray;
+	line-height: 38px;
+	font-size: 1.7em;
+	text-align: center;
+}
+
+.menuButton span
+{
+    display: inline-block;
+    -webkit-transform: scale(1.5, 1);  /* Safari and Chrome */
+    -moz-transform: scale(1.5, 1);  /* Firefox */
+    -ms-transform: scale(1.5, 1);  /* IE 9 */
+    -o-transform: scale(1.5, 1);  /* Opera */
+    transform: scale(1.5, 1);  /* W3C */
+}
+
+.iFrameLiquidWrapper
+{
+	background: #F0F0F0;
+	float: left;
+	width: 100%;
+	z-index: 1;
+}
+
+.mainContent
+{
+	margin-left: 200px;
+	background: #FFFFFF;
+	-webkit-transition: margin-left 200ms;
+	-moz-transition: margin-left 200ms;
+	-ms-transition: margin-left 200ms;
+	-o-transition: margin-left 200ms;
+	transition: margin-left 200ms;
+}
+
+.menuWrapper
+{
+	float: left;
+	width: 200px;
+	margin-left: -100%;
+
+	background: #f0f0f0;
+	/*
+	display: inline-block;
+	height: 100%;
+	*/
+	position: relative;
+	left: 0;
+	-webkit-transition: left 200ms;
+	-moz-transition: left 200ms;
+	-ms-transition: left 200ms;
+	-o-transition: left 200ms;
+	transition: left 200ms;
+}
+
+.menuButtonWrapper
+{
+	height: 40px;  /* must match the .page_header class in style_page.css */
+	max-height: 40px;  /* must match the .page_header class in style_page.css */
+	background: #dcdcdc;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.menuTypesCaption
+{
+	display: inline;
+	vertical-align: middle;
+	margin-left: 45px;
+	line-height: 40px;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	/*font-size: 15px;*/
+	font-weight: lighter;
+	color: gray;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.menuTypesToggleArrow
+{
+	position: absolute;
+	display: block;
+	height: 40px;
+	width: 20px;
+	right: 0;
+	cursor: pointer;
+	top: 0;
+	bottom: 0;
+	text-align: left;
+	vertical-align: middle;
+	line-height: 38px;
+}
+
+.menuTypesToggleArrowRotator
+{
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-left: 8px solid gray;
+	border-bottom: 5px solid transparent;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: transform 200ms;
+	-moz-transition: transform 200ms;
+	-ms-transition: transform 200ms;
+	-o-transition: transform 200ms;
+	transition: transform 200ms;
+}
+
+.menuTypeWrapper
+{
+	background: #868686;
+	-webkit-box-shadow:inset 0 3px 15px -9px #000000;
+	box-shadow:inset 0 3px 15px -9px #000000;
+	max-height: 0;  /* Use max-height instead of height to allow transition to work */
+	overflow: hidden;
+	-webkit-transition: max-height 200ms;
+	-moz-transition: max-height 200ms;
+	-ms-transition: max-height 200ms;
+	-o-transition: max-height 200ms;
+	transition: max-height 200ms;
+}
+
+.menuTypeWrapper div
+{
+	display: block;
+	padding: 8px 5px 8px 10px;
+	color: white;
+	cursor: pointer;
+	background: transparent;
+	font-size: 0.8em;
+	-webkit-transition: background 100ms;
+	-moz-transition: background 100ms;
+	-ms-transition: background 100ms;
+	-o-transition: background 100ms;
+	transition: background 100ms;
+}
+
+.menuTypeWrapper div:hover
+{
+	background: #979797;
+}
+
+.menuTypeWrapper > div:first-child
+{
+	margin-top: 5px;
+}
+
+.menuTypeWrapper > div:last-child
+{
+	margin-bottom: 5px;
+}
+
+#menuTypeSearchResults
+{
+	display: none;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.menuListTopicsWrapper
+{
+	opacity: 1;
+	display: block;
+	-webkit-transition: opacity 200ms;
+	-moz-transition: opacity 200ms;
+	-ms-transition: opacity 200ms;
+	-o-transition: opacity 200ms;
+	transition: opacity 200ms;
+}
+
+.menuListTopicsWrapper div
+{
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 0.9em;
+	cursor: pointer;
+	color: black;
+}
+
+.menuListTopicsWrapper div:hover
+{
+	background: #CCCCCC;
+}
+
+.menuListTopicsWrapper div .icon
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	height: 22px;
+}
+
+.menuListTopicsWrapper div .icon.small
+{
+	height: 16px;
+}
+
+.menuListTopicsWrapper div .backEntryText
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 174px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	font-weight: bold;
+}
+
+.menuListTopicsWrapper div .pageEntryText
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 174px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.menuListTopicsWrapper div .categoryEntryText
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 148px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.menuListIndexWrapper
+{
+	opacity: 0;
+	display: none;
+	-webkit-transition: opacity 200ms;
+	-moz-transition: opacity 200ms;
+	-ms-transition: opacity 200ms;
+	-o-transition: opacity 200ms;
+	transition: opacity 200ms;
+}
+
+.menuListIndexSearchInput
+{
+	display: block;
+	border: 1px solid #DCDCDC;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding: 6px;
+	margin: 5px 5px 12px 5px;
+	width: 176px;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.menuListIndexSearchWrapper
+{
+	/* Do not delete this helper class */
+}
+
+.menuListIndexSearchWrapper div
+{
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 0.9em;
+	cursor: pointer;
+	color: black;
+}
+
+.menuListIndexSearchWrapper div:hover
+{
+	background: #CCCCCC;
+}
+
+.menuListIndexSearchWrapper div .i1
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	height: 22px;
+}
+
+.menuListIndexSearchWrapper div .i2
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 174px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.menuListSearchWrapper
+{
+	opacity: 0;
+	display: none;
+	-webkit-transition: opacity 200ms;
+	-moz-transition: opacity 200ms;
+	-ms-transition: opacity 200ms;
+	-o-transition: opacity 200ms;
+	transition: opacity 200ms;
+}
+
+.menuListSearchResultsWrapper
+{
+}
+
+.menuListSearchResultsWrapper div
+{
+	display: none;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 0.9em;
+	cursor: pointer;
+	color: black;
+}
+
+.menuListSearchResultsWrapper div:hover
+{
+	background: #CCCCCC;
+}
+
+.menuListSearchResultsWrapper div .i1
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	height: 22px;
+}
+
+.menuListSearchResultsWrapper div .i2
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 174px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.noSearchResultsLeftMenu
+{
+	display: block;
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
+	text-align: center;
+	font-size: 0.8em;
+	color: gray;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.menuListRelatedPagesWrapper
+{
+	opacity: 0;
+	display: none;
+	-webkit-transition: opacity 200ms;
+	-moz-transition: opacity 200ms;
+	-ms-transition: opacity 200ms;
+	-o-transition: opacity 200ms;
+	transition: opacity 200ms;
+}
+
+.menuListRelatedPagesWrapper div
+{
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 0.9em;
+	cursor: pointer;
+	color: black;
+}
+
+.menuListRelatedPagesWrapper div:hover
+{
+	background: #CCCCCC;
+}
+
+.menuListRelatedPagesWrapper div .i1
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	height: 22px;
+}
+
+.menuListRelatedPagesWrapper div .i2
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 174px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.menuListRelatedPagesWrapper .noRelatedPagesLeftMenu
+{
+	display: block;
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
+	text-align: center;
+	font-size: 0.8em;
+	color: gray;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.menuListBookmarksWrapper
+{
+	opacity: 0;
+	display: none;
+	-webkit-transition: opacity 200ms;
+	-moz-transition: opacity 200ms;
+	-ms-transition: opacity 200ms;
+	-o-transition: opacity 200ms;
+	transition: opacity 200ms;
+}
+
+.menuListBookmarksWrapper div
+{
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size: 0.9em;
+	cursor: pointer;
+	color: black;
+}
+
+.menuListBookmarksWrapper div:hover
+{
+	background: #CCCCCC;
+}
+
+.menuListBookmarksWrapper div .i1
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	height: 22px;
+}
+
+.menuListBookmarksWrapper div .i2
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 144px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.menuListBookmarksWrapper div .i3
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 30px;
+	height: 16px;
+}
+
+.menuListBookmarksWrapper .noBookmarks
+{
+	display: block;
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
+	text-align: center;
+	font-size: 0.8em;
+	color: gray;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.footer
+{
+	background: #FFFFFF;  /* The background of footer should be always the same like of body, html */
+	text-align: center;
+	width: 100%;
+	clear: both;
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
+
+.footerForeignAttributions
+{
+	font-size: 0.6em;
+	margin-top: 2em;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.bookmarkWrapper
+{
+	position: absolute;
+	z-index: 3;
+	display: none;
+	background: #8BA4B5;
+	padding: 6px;
+	top: 100px;
+	right: 200px;
+	width: 180px;
+
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+
+	-webkit-box-shadow: 0 5px 7px 0 #B0B0B0;
+	box-shadow: 0 5px 7px 0 #B0B0B0;
+}
+
+@media all and (max-width: 800px)
+{
+	.bookmarkWrapper
+	{
+		right: 30px;
+	}
+}
+
+@media all and (max-width: 380px)
+{
+	.bookmarkWrapper
+	{
+		right: 10px;
+	}
+}
+
+.bookmarkWrapper div
+{
+	font-size: 0.9em;
+	padding: 8px;
+	cursor: pointer;
+	background: transparent;
+	color: white;
+	text-align: center;
+	-webkit-transition: background 200ms;
+	-moz-transition: background 200ms;
+	-ms-transition: background 200ms;
+	-o-transition: background 200ms;
+	transition: background 200ms;
+
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.bookmarkWrapper div:hover
+{
+	background: white;
+	color: #8BA4B5;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.relatedPagesWrapper
+{
+	position: absolute;
+	z-index: 3;
+	display: none;
+	background: #8BA4B5;
+	padding: 6px;
+	top: 100px;
+	right: 10px;
+	width: 180px;
+
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+
+	-webkit-box-shadow: 0 5px 7px 0 #B0B0B0;
+	box-shadow: 0 5px 7px 0 #B0B0B0;
+}
+
+.relatedPagesWrapper div
+{
+	font-size: 0.9em;
+	padding: 8px;
+	cursor: pointer;
+	background: transparent;
+	color: white;
+	text-align: center;
+	-webkit-transition: background 200ms;
+	-moz-transition: background 200ms;
+	-ms-transition: background 200ms;
+	-o-transition: background 200ms;
+	transition: background 200ms;
+
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.relatedPagesWrapper div:hover
+{
+	background: white;
+	color: #8BA4B5;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.noRelatedPagesPopup
+{
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 15px;
+	margin-right: 15px;
+	text-align: center;
+	font-size: 0.8em;
+	color: white;
+}
+
+/* ================================= Standard page styles ====================================== */
+
+.page_header
+{
+	height: 40px;  /* must match the .menuButtonWrapper class in style.css */
+	max-height: 40px;  /* must match the .menuButtonWrapper class in style.css */
+	background: #dcdcdc;
+	position: relative;
+}
+
+.progress_spinner
+{
+	vertical-align: middle;
+	margin-right: 10px;
+	display: none;
+
+	width: 15px;
+	height: 15px;
+
+	border:  solid 4px transparent;
+	border-top-color:  gray;
+	border-left-color: Gray;
+	border-radius: 15px;
+
+	-webkit-animation: spinner 800ms linear infinite;
+	-moz-animation:    spinner 800ms linear infinite;
+	-ms-animation:     spinner 800ms linear infinite;
+	-o-animation:      spinner 800ms linear infinite;
+	animation:         spinner 800ms linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0%   { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-moz-keyframes spinner {
+  0%   { -moz-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-o-keyframes spinner {
+  0%   { -o-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-ms-keyframes spinner {
+  0%   { -ms-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes spinner {
+  0%   { transform: rotate(0deg); transform: rotate(0deg); }
+  100% { transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+.page_header_leftWrapper
+{
+	position: absolute;
+	display: block;
+	left: 14px;
+	top: 0;
+	bottom: 0;
+	line-height: 40px;
+	font-size: 0.8em;
+	color: gray;
+	-webkit-transition: left 200ms;
+	-moz-transition: left 200ms;
+	-ms-transition: left 200ms;
+	-o-transition: left 200ms;
+	transition: left 200ms;
+}
+
+.page_header_rightWrapper
+{
+	position: absolute;
+	display: block;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	line-height: 40px;
+}
+
+.page_header_toolButton
+{
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 10px;
+	padding-left: 4px;
+	padding-right: 8px;
+	cursor: pointer;
+}
+
+@media all and (max-width: 800px)
+{
+	.page_header_toolButton
+	{
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-right: 0;
+	}
+}
+
+@media all and (max-width: 380px)
+{
+	.page_header_toolButton
+	{
+		padding-left: 2px;
+		padding-right: 2px;
+		margin-right: -2px;
+	}
+
+	.page_header_toolButton.nonMobile
+	{
+		display: none;
+	}
+
+	.page_header_rightWrapper
+	{
+		right: 4px;
+	}
+}
+
+.page_header_toolButton:hover
+{
+	background: #CCCCCC;
+}
+
+.page_header_toolButtonIcon
+{
+	display: inline-block;
+	margin-right: 0px;
+	height: 25px;
+	width: 25px;  /* Opera and Safari need this too (bug?) */
+	vertical-align: middle;
+}
+
+.page_header_toolButtonCaption
+{
+	display: inline-block;
+	font-size: 0.8em;
+}
+
+@media all and (max-width: 800px)
+{
+	.page_header_toolButtonCaption
+	{
+		display: none;
+	}
+}
+
+/* ================================ WYSIWYG related styles ===================================== */
+
+/*
+** NOTE: The following CSS code has been copied from the COIN.DOCU standard style file
+** (see system/css/all/coindocu_standardinterfacestyle.php) as reference which tags the
+** WYSIWYG editor used to render the page contents.
+*/
+
+/* This is a wrapper class for all text content related styles */
+.coindocu_page
+{
+	font-size: 0.85em;
+	padding: 14px;
+	line-height: 1.3em;
+}
+
+.coindocu_page h1
+{
+	margin-top: 0.6em;
+	margin-bottom: 1.0em;
+}
+
+.coindocu_page h2
+{
+	margin-top: 0.6em;
+	margin-bottom: 0.5em;
+}
+
+.coindocu_page h3
+{
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+}
+
+.coindocu_page h4
+{
+}
+
+.coindocu_page h5
+{
+}
+
+/* H6 is reserved for quotes */
+/* Note: COIN.DMS has same values. If you want to change them, you need to set them explicitly! */
+.coindocu_page h6
+{
+	width: 80%;
+	margin-left: 20px;
+	background: #ececec;
+	position: relative;
+	padding: 7px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	font-weight: normal;
+	font-size: inherit;
+}
+
+.coindocu_page h6:before
+{
+    content: '“';
+    font-size: 300%;
+	position: absolute;
+	top: -5px;
+	left: -15px;
+    color: rgb(145, 152, 193);
+}
+
+.coindocu_page h6:after
+{
+    content: '”';
+    font-size: 300%;
+    position: absolute;
+	right: -16px;
+	bottom: -25px;
+    color: rgb(145, 152, 193);
+}
+
+.coindocu_page hr
+{
+}
+
+.coindocu_page table
+{
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.coindocu_page table.border
+{
+}
+
+.coindocu_page table caption
+{
+}
+
+.coindocu_page table tr
+{
+}
+
+.coindocu_page table th
+{
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.coindocu_page table td
+{
+	vertical-align: top;
+}
+
+.coindocu_page .fixedWidthText
+{
+}
+
+.coindocu_page code
+{
+	white-space: pre;
+	display: block;
+	width: 95%;
+	background: #ececec;
+	font-size: 1.1em;
+	margin-top: 1em;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	padding: 0px 7px 7px 7px;
+	overflow-x: auto;
+}
+
+.coindocu_page code:before
+{
+	content: 'Code';
+	display: block;
+	width: 100%;
+	margin-left: -7px;
+	background: #a0a0a0;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #ffffff;
+	padding: 4px 7px 4px 7px;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	margin-bottom: 0.4em;
+	cursor: default;
+}
+
+.coindocu_page code.php
+{
+}
+
+.coindocu_page code.php:before
+{
+	content: 'PHP';
+}
+
+.coindocu_page code.html
+{
+}
+
+.coindocu_page code.html:before
+{
+	content: 'HTML';
+}
+
+.coindocu_page code.css
+{
+}
+
+.coindocu_page code.css:before
+{
+	content: 'CSS';
+}
+
+.coindocu_page code.javascript
+{
+}
+
+.coindocu_page code.javascript:before
+{
+	content: 'JavaScript';
+}
+
+.coindocu_page code.cpp
+{
+}
+
+.coindocu_page code.cpp:before
+{
+	content: 'C++';
+}
+
+.coindocu_page code.java
+{
+}
+
+.coindocu_page code.java:before
+{
+	content: 'JAVA';
+}
+
+.coindocu_page abbr
+{
+}
+
+.coindocu_page audio
+{
+}
+
+.coindocu_page video
+{
+}
+
+.coindocu_page button
+{
+}
+
+.coindocu_page summary
+{
+}
+
+.coindocu_page fieldset
+{
+}
+
+.coindocu_page fieldset legend
+{
+}
+
+.coindocu_page iframe
+{
+}

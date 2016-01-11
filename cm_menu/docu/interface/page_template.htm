@@ -1,0 +1,25 @@
+<div class="page_header">
+	<div class="page_header_leftWrapper">
+		<div class="progress_spinner"></div>
+		{COINDOCU_PAGE_TITLE}
+	</div>
+
+	<div class="page_header_rightWrapper">
+		<div class="page_header_toolButton" onclick="cancelEventPropagation(event); bookmarkPage();">
+			<img class="page_header_toolButtonIcon" src="interface/bookmark.svg"/>
+			<div class="page_header_toolButtonCaption">{IP_PAGE_BTN_BOOKMARK}</div>
+		</div>
+		<div class="page_header_toolButton" onclick="cancelEventPropagation(event); showRelatedPages();">
+			<img class="page_header_toolButtonIcon" src="interface/related.svg"/>
+			<div class="page_header_toolButtonCaption">{IP_PAGE_BTN_RELATEDPAGES}</div>
+		</div>
+		<div class="page_header_toolButton nonMobile" onclick="printPage();">
+			<img class="page_header_toolButtonIcon" src="interface/print.svg"/>
+			<div class="page_header_toolButtonCaption">{IP_PAGE_BTN_PRINT}</div>
+		</div>
+	</div>
+</div>
+
+<div class="coindocu_page">
+{COINDOCU_PAGECONTENTS}
+</div>
