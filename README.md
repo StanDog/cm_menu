@@ -6,9 +6,9 @@ CM Menu is open-souce and licensed under the very permissive MIT license.
 
 [![Preview](https://raw.githubusercontent.com/StanDog/cm_menu/master/cm_menu/docu/files/47909ee1e829c9bf317c15188dde3991.png)](https://raw.githubusercontent.com/StanDog/cm_menu/master/cm_menu/docu/files/47909ee1e829c9bf317c15188dde3991.png)
 
-Written by Stanislav Eckert
+Written by Stanislav Eckert<br>
 License: [MIT license](https://raw.githubusercontent.com/StanDog/cm_menu/master/cm_menu/LICENSE)
 
-GitHub: [https://github.com/StanDog/cm_menu](https://github.com/StanDog/cm_menu)
-Email: [github@stanislaveckert.com](mailto:github@stanislaveckert.com)
-Web: [http://stanislaveckert.com](http://stanislaveckert.com)
+GitHub: [https://github.com/StanDog/cm_menu](https://github.com/StanDog/cm_menu)<br>
+Email: [github@stanislaveckert.com](mailto:github@stanislaveckert.com)<br>
+Web: [http://stanislaveckert.com](http://stanislaveckert.com)<br>
