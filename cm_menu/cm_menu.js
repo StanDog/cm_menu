@@ -7,6 +7,9 @@
  *
  * Changelog
  * --------------------
+ * 2016-08-18 (version 6)
+ * - self-initialization on first use (instead on page loading)
+ *
  * 2016-01-11 (version 5)
  * - menu item 'click' attribute can be a direct function (previously
  *   only a string to be evaluated)
@@ -37,14 +40,14 @@
  *
  * @author     Stanislav Eckert
  * @copyright  Stanislav Eckert
- * @version    5
+ * @version    6
  * @link       http://stanislaveckert.com
  * @license    MIT license
  */
 
 var cm_menu =
 {
-	version: 5,
+	version: 6,
 	initialized: false,
 	uniqueMenuID: 1,
 	contextElement: null,
@@ -222,6 +225,9 @@ var cm_menu =
 
 	createMenu: function(structure, target)
 	{
+		// Initialize if not already done
+		this.init();
+
 		//
 		// Create menu
 		//
@@ -362,6 +368,9 @@ var cm_menu =
 
 	assignMenu: function(target, menu)
 	{
+		// Initialize if not already done
+		this.init();
+
 		// Get object reference, if string
 		if (typeof(target) == 'string') {
 			target = document.getElementById(target);
@@ -378,6 +387,9 @@ var cm_menu =
 
 	_showMenu: function(event)
 	{
+		// Initialize if not already done
+		this.init();
+
 		// IE does not pass the event
 		if (event == null) {
 			event = window.event;
@@ -426,6 +438,9 @@ var cm_menu =
 
 	_showSubMenu: function(event)
 	{
+		// Initialize if not already done
+		this.init();
+
 		// IE does not pass the event
 		if (event == null) {
 			event = window.event;
@@ -461,6 +476,9 @@ var cm_menu =
 
 	_closeMenus: function()
 	{
+		// Initialize if not already done
+		this.init();
+
 		var cm_menus = document.getElementsByClassName('cm_menu');
 
 		for (var i=0; i < cm_menus.length; i++)
@@ -469,8 +487,3 @@ var cm_menu =
 		}
 	},
 };
-
-window.addEventListener('load', function()
-{
-	cm_menu.init();
-});
