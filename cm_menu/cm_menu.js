@@ -7,6 +7,10 @@
  *
  * Changelog
  * --------------------
+ * 2016-08-18 (version 7)
+ * - self-initialization bugfix
+ * - added removeMenu() function
+ *
  * 2016-08-18 (version 6)
  * - self-initialization on first use (instead on page loading)
  *
@@ -40,14 +44,14 @@
  *
  * @author     Stanislav Eckert
  * @copyright  Stanislav Eckert
- * @version    6
+ * @version    7
  * @link       http://stanislaveckert.com
  * @license    MIT license
  */
 
 var cm_menu =
 {
-	version: 6,
+	version: 7,
 	initialized: false,
 	uniqueMenuID: 1,
 	contextElement: null,
@@ -385,11 +389,25 @@ var cm_menu =
 		target.oncontextmenu = this._showMenu;
 	},
 
-	_showMenu: function(event)
+	removeMenu: function(target)
 	{
 		// Initialize if not already done
 		this.init();
 
+		// Close all menu too
+		this._closeMenus();
+
+		// Get object reference, if string
+		if (typeof(target) == 'string') {
+			target = document.getElementById(target);
+		}
+
+		target.removeAttribute('data-cm-menu');
+		target.oncontextmenu = null;
+	},
+
+	_showMenu: function(event)
+	{
 		// IE does not pass the event
 		if (event == null) {
 			event = window.event;
@@ -438,9 +456,6 @@ var cm_menu =
 
 	_showSubMenu: function(event)
 	{
-		// Initialize if not already done
-		this.init();
-
 		// IE does not pass the event
 		if (event == null) {
 			event = window.event;
@@ -476,9 +491,6 @@ var cm_menu =
 
 	_closeMenus: function()
 	{
-		// Initialize if not already done
-		this.init();
-
 		var cm_menus = document.getElementsByClassName('cm_menu');
 
 		for (var i=0; i < cm_menus.length; i++)
